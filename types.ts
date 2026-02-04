@@ -1,5 +1,5 @@
 
-export type PageType = 'PAGE_1' | 'PAGE_2';
+export type PageType = 'PAGE_1' | 'PAGE_2' | 'COPY' | 'VEO';
 
 export interface MagazineContent {
   title: string;
@@ -8,14 +8,18 @@ export interface MagazineContent {
   disclaimer: string;
 }
 
+// Added for Veo video generation configuration
 export enum AspectRatio {
-  LANDSCAPE = '16:9',
-  PORTRAIT = '9:16'
+  PORTRAIT = 'PORTRAIT',
+  LANDSCAPE = 'LANDSCAPE',
 }
 
-export interface VideoGenerationState {
-  status: 'idle' | 'checking_key' | 'generating' | 'polling' | 'completed' | 'error';
-  videoUri?: string;
-  error?: string;
-  progressMessage?: string;
-}
+// Added to track the asynchronous state of video generation
+export type VideoGenerationState =
+  | { status: 'idle' }
+  | { status: 'checking_key'; progressMessage: string }
+  | { status: 'generating'; progressMessage: string }
+  | { status: 'polling'; progressMessage: string }
+  | { status: 'completed'; videoUri: string }
+  | { status: 'error'; error: string };
+
