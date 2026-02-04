@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import MagazinePreview from './components/MagazinePreview';
 import { PageType } from './types';
@@ -29,26 +28,26 @@ const App: React.FC = () => {
           <div className="flex justify-center gap-4">
             <button 
               onClick={() => setActivePage('PAGE_1')}
-              className={`px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-tighter border transition-all ${activePage === 'PAGE_1' ? 'bg-[#7A6E94] text-[#F8F8FA] border-[#7A6E94]' : 'border-[#7A6E94]/30 text-[#7A6E94] bg-white'}`}
+              className={`px-8 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border transition-all ${activePage === 'PAGE_1' ? 'bg-[#7A6E94] text-[#F8F8FA] border-[#7A6E94]' : 'border-[#7A6E94]/30 text-[#7A6E94] bg-white hover:border-[#7A6E94]'}`}
             >
-              Page 1: Overview
+              Page 1
             </button>
             <button 
               onClick={() => setActivePage('PAGE_2')}
-              className={`px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-tighter border transition-all ${activePage === 'PAGE_2' ? 'bg-[#7A6E94] text-[#F8F8FA] border-[#7A6E94]' : 'border-[#7A6E94]/30 text-[#7A6E94] bg-white'}`}
+              className={`px-8 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border transition-all ${activePage === 'PAGE_2' ? 'bg-[#7A6E94] text-[#F8F8FA] border-[#7A6E94]' : 'border-[#7A6E94]/30 text-[#7A6E94] bg-white hover:border-[#7A6E94]'}`}
             >
-              Page 2: Tools & Safety
+              Page 2
             </button>
           </div>
           
-          <div className="flex justify-center">
-            <MagazinePreview page={activePage} />
+          <div className="flex justify-center w-full">
+            <MagazinePreview page={activePage === 'PAGE_1' ? 'PAGE_1' : 'PAGE_2'} />
           </div>
         </div>
       </main>
 
       <footer className="py-8 px-6 text-center border-t border-[#7A6E94]/10">
-        <p className="text-[#7A6E94] text-xs font-medium uppercase tracking-widest">
+        <p className="text-[#7A6E94] text-[10px] font-medium uppercase tracking-widest">
           Educational info only — not medical advice.
         </p>
       </footer>
