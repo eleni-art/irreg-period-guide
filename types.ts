@@ -7,24 +7,19 @@ export interface MagazineContent {
   disclaimer: string;
 }
 
-// Added AspectRatio and VideoGenerationState to fix compilation errors in VeoStudio.tsx
-
-/**
- * Aspect ratios supported by the Veo video generation feature.
- */
+// Added missing AspectRatio enum for video generation scaling
 export enum AspectRatio {
   PORTRAIT = 'PORTRAIT',
-  LANDSCAPE = 'LANDSCAPE'
+  LANDSCAPE = 'LANDSCAPE',
 }
 
-/**
- * Represents the state of a video generation request.
- */
+// Added missing VideoGenerationState interface to track progress and output
 export interface VideoGenerationState {
   status: 'idle' | 'checking_key' | 'generating' | 'polling' | 'completed' | 'error';
   progressMessage?: string;
   videoUri?: string;
   error?: string;
 }
+
 
 
