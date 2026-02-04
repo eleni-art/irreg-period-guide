@@ -1,3 +1,4 @@
+
 export type PageType = 'PAGE_1' | 'PAGE_2';
 
 export interface MagazineContent {
@@ -7,19 +8,24 @@ export interface MagazineContent {
   disclaimer: string;
 }
 
-// Added missing AspectRatio enum for video generation scaling
+/**
+ * Supported aspect ratios for video generation.
+ */
 export enum AspectRatio {
   PORTRAIT = 'PORTRAIT',
   LANDSCAPE = 'LANDSCAPE',
 }
 
-// Added missing VideoGenerationState interface to track progress and output
+/**
+ * State of the video generation process.
+ */
 export interface VideoGenerationState {
   status: 'idle' | 'checking_key' | 'generating' | 'polling' | 'completed' | 'error';
   progressMessage?: string;
   videoUri?: string;
   error?: string;
 }
+
 
 
 
