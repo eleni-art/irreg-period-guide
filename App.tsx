@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import MagazinePreview from './components/MagazinePreview';
 import { PageType } from './types';
@@ -25,13 +26,13 @@ const App: React.FC = () => {
         <nav className="flex justify-center gap-2 p-1.5 bg-[#F8F8FA] rounded-full border border-[#7A6E94]/10">
           <button 
             onClick={() => setActivePage('PAGE_1')}
-            className={`px-8 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activePage === 'PAGE_1' ? 'bg-white text-[#5D5276] shadow-sm ring-1 ring-[#7A6E94]/10' : 'text-[#7A6E94] hover:text-[#5D5276]'}`}
+            className={`px-8 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activePage === 'PAGE_1' ? 'bg-[#7A6E94] text-white shadow-md' : 'text-[#7A6E94] hover:text-[#5D5276] hover:bg-white/50'}`}
           >
             Page 1
           </button>
           <button 
             onClick={() => setActivePage('PAGE_2')}
-            className={`px-8 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activePage === 'PAGE_2' ? 'bg-white text-[#5D5276] shadow-sm ring-1 ring-[#7A6E94]/10' : 'text-[#7A6E94] hover:text-[#5D5276]'}`}
+            className={`px-8 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activePage === 'PAGE_2' ? 'bg-[#7A6E94] text-white shadow-md' : 'text-[#7A6E94] hover:text-[#5D5276] hover:bg-white/50'}`}
           >
             Page 2
           </button>
@@ -58,3 +59,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
