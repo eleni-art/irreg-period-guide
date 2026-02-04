@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PageType } from '../types';
 
@@ -15,7 +14,7 @@ const ReasonCard: React.FC<{
     <div className="space-y-3">
       <div>
         <h4 className="text-[8px] md:text-[10px] uppercase font-bold text-[#7A6E94]">Why</h4>
-        <p className="text-[10px] md:text-sm text-[#5D5276] leading-snug">{why}</p>
+        <p className="text-[9px] md:text-sm text-[#5D5276] leading-snug">{why}</p>
       </div>
       <div className="grid grid-cols-2 gap-2">
         <div>
@@ -45,48 +44,44 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
   if (page === 'PAGE_1') {
     return (
       <div className="max-w-4xl w-full bg-white shadow-2xl rounded-[2rem] overflow-hidden border border-[#7A6E94]/10 p-6 md:p-20 relative">
-        {/* Top Disclaimer */}
         <div className="mb-8 text-center italic text-[#7A6E94]/60 text-[10px] md:text-xs">
           {disclaimer}
         </div>
 
-        {/* Title Section */}
         <header className="text-center mb-12">
           <h1 className="font-serif text-[#5D5276] leading-tight mb-4">
             <span className="block text-3xl md:text-6xl mb-2">Irregular Periods</span>
             <span className="block text-xl md:text-4xl text-[#7A6E94]/80 italic">Quick Clarity Guide + Tracker</span>
           </h1>
-          <p className="text-[#7A6E94] text-sm md:text-lg font-medium italic max-w-2xl mx-auto mt-4">
+          <p className="text-[#7A6E94] text-xs md:text-lg font-medium italic max-w-2xl mx-auto mt-4">
             A helpful overview of common reasons your cycle might feel off and how to know.
           </p>
         </header>
 
-        {/* Intro Section */}
-        <div className="max-w-xl mx-auto text-center mb-16">
-          <p className="text-base md:text-xl text-[#5D5276] leading-relaxed">
-            Irregular periods are super common and there are a bunch of overlapping reasons they can happen. The goal of this guide is to help you notice patterns, track what matters, and know when to get checked. It is not to diagnose you.
+        <div className="max-w-xl mx-auto text-center mb-16 px-4">
+          <p className="text-sm md:text-xl text-[#5D5276] leading-relaxed">
+            Irregular periods are super common and there are a bunch of overlapping reasons they can happen. The goal of this guide is to help you notice patterns, track what matters, and know when to get checked.
           </p>
         </div>
 
-        {/* What Counts Section */}
         <section className="mb-16">
           <h2 className="font-serif text-xl md:text-3xl text-[#5D5276] mb-6 text-center">What counts as an irregular period?</h2>
-          <p className="text-center mb-10 text-[#7A6E94] text-xs md:text-base">Common signs and symptoms to look for.</p>
+          <p className="text-center mb-10 text-[#7A6E94] text-[10px] md:text-base uppercase tracking-widest font-bold">Common signs and symptoms</p>
           
-          <ul className="grid grid-cols-2 gap-3 md:gap-4 max-w-3xl mx-auto">
+          <ul className="grid grid-cols-2 gap-3 md:gap-4 max-w-3xl mx-auto px-2">
             {[
               "Periods that come fewer than 21 days apart or more than 35 days apart.",
               "Missing three or more periods in a row.",
               "Bleeding that is much heavier or lighter than your usual.",
               "Periods that last longer than seven days.",
               "Cycle length that changes a lot month to month.",
-              "Periods with severe pain, cramping, nausea, or vomiting.",
-              "Spotting or bleeding between periods, after sex, or after menopause.",
-              "Soaking through one or more tampons or pads in an hour."
+              "Periods with severe pain, cramping, or nausea.",
+              "Spotting or bleeding between periods.",
+              "Soaking through tampons or pads in an hour."
             ].map((bullet, idx) => (
               <li 
                 key={idx} 
-                className="flex items-start gap-2 md:gap-3 text-[9px] md:text-sm leading-relaxed p-3 rounded-xl bg-[#F8F8FA] text-[#5D5276]"
+                className="flex items-start gap-2 text-[9px] md:text-sm leading-relaxed p-3 rounded-xl bg-[#F8F8FA] text-[#5D5276] border border-[#7A6E94]/5"
               >
                 <div className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 bg-[#98DDC8]" />
                 {bullet}
@@ -98,41 +93,40 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
           </p>
         </section>
 
-        {/* 8 Common Reasons Grid */}
         <section>
           <h2 className="font-serif text-xl md:text-3xl text-[#5D5276] mb-12 text-center">Common Patterns & Reasons</h2>
-          <div className="grid grid-cols-2 gap-3 md:gap-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-8 px-2">
             <ReasonCard 
               title="Menarche / Early Puberty" 
-              phrase="Your cycle is basically learning the routine."
+              phrase="The cycle is learning the routine."
               why="In the first few years, ovulation can be inconsistent while the body matures."
               notice={["Unpredictable timing", "Skipped months", "Flow shifts"]}
               track={["Cycle dates", "Bleeding days", "Heaviness"]}
             />
             <ReasonCard 
               title="Perimenopause" 
-              phrase="Your hormones are shifting."
+              phrase="Hormones are shifting."
               why="Ovulation becomes less consistent as estrogen and progesterone fluctuate."
               notice={["Cycles get shorter", "Skipped periods", "New spotting"]}
               track={["Cycle length", "Pattern changes", "Bleeding after sex"]}
             />
             <ReasonCard 
               title="Stress" 
-              phrase="Stress can mess with signals."
+              phrase="Messing with the signals."
               why="Stress hormones can disrupt the communication that supports regular ovulation."
               notice={["Delayed periods", "Skipped cycles", "Mood shifts"]}
               track={["Sleep", "Major events", "Mood shifts"]}
             />
             <ReasonCard 
               title="Weight Change" 
-              phrase="Your cycle notices body changes."
+              phrase="The body notices shifts."
               why="Sudden changes in energy and body fat can shift reproductive hormones."
               notice={["Missed periods", "Longer cycles", "Lighter bleeding"]}
               track={["Weight change timing", "Appetite", "Training"]}
             />
             <ReasonCard 
               title="Thyroid Issues" 
-              phrase="The tempo setter for the body."
+              phrase="The body's tempo setter."
               why="Thyroid hormones influence metabolism and can affect cycle regularity."
               notice={["Fatigue", "Cold intolerance", "Skin changes", "Anxiety"]}
               track={["Cycle changes", "Energy symptoms"]}
@@ -146,7 +140,7 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
             />
             <ReasonCard 
               title="Intense Exercise" 
-              phrase="Fuel must match training."
+              phrase="Fuel must match output."
               why="High training and low fuel can reduce signals needed for ovulation."
               notice={["Longer cycles", "Missed periods", "Injuries"]}
               track={["Training volume", "Rest days", "Nutrition"]}
@@ -154,19 +148,19 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
             <ReasonCard 
               title="PCOS" 
               phrase="Patterns over cysts."
-              why="Typically diagnosed with criteria including irregular cycles and higher androgens."
+              why="Typically diagnosed with criteria including irregular cycles and androgens."
               notice={["Long cycles", "Acne", "Hair growth", "Thinning"]}
               track={["Cycle length", "Hair changes", "Lab notes"]}
             />
           </div>
           
-          <p className="text-center mt-12 text-[#7A6E94] italic text-[10px] md:text-sm">
-            "Many of these overlap. Tracking helps you and your clinician connect the dots faster."
+          <p className="text-center mt-12 text-[#7A6E94] italic text-[9px] md:text-sm">
+            "Many of these overlap. Tracking helps connect the dots faster."
           </p>
 
-          <div className="mt-12 bg-[#98DDC8]/20 border border-[#98DDC8] rounded-2xl p-6 text-center">
-            <h4 className="font-bold text-[#5D5276] uppercase tracking-widest text-[9px] md:text-xs mb-2">Quick Next Step</h4>
-            <p className="text-[#5D5276] text-[10px] md:text-base">If you have been experiencing irregular period symptoms for 3+ months, it’s worth checking in. You deserve peace of mind.</p>
+          <div className="mt-12 bg-[#98DDC8]/20 border border-[#98DDC8] rounded-2xl p-6 text-center mx-2">
+            <h4 className="font-bold text-[#5D5276] uppercase tracking-widest text-[9px] md:text-xs mb-2">Next Step</h4>
+            <p className="text-[#5D5276] text-[10px] md:text-base">If symptoms persist for 3+ months, it’s worth checking in. You deserve peace of mind.</p>
           </div>
         </section>
       </div>
@@ -175,12 +169,11 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
 
   return (
     <div className="max-w-4xl w-full bg-white shadow-2xl rounded-[2rem] overflow-hidden border border-[#7A6E94]/10 p-6 md:p-20">
-      <h2 className="font-serif text-xl md:text-3xl text-[#5D5276] mb-8">3 Month Cycle Tracker</h2>
-      <p className="text-[#7A6E94] mb-6 text-xs md:text-base">Bring this to your appointment for clearer communication.</p>
+      <h2 className="font-serif text-xl md:text-3xl text-[#5D5276] mb-8 text-center md:text-left">3 Month Cycle Tracker</h2>
+      <p className="text-[#7A6E94] mb-6 text-xs md:text-base text-center md:text-left">Bring this to your appointment for clearer communication.</p>
       
-      {/* Tracker Table */}
       <div className="overflow-x-auto mb-8 border border-[#7A6E94]/10 rounded-xl">
-        <table className="w-full text-left text-[9px] md:text-sm border-collapse min-w-[500px]">
+        <table className="w-full text-left text-[9px] md:text-sm border-collapse min-w-[450px]">
           <thead>
             <tr className="bg-[#F8F8FA] border-b border-[#7A6E94]/20 text-[#7A6E94] font-semibold uppercase tracking-tighter">
               <th className="py-3 px-3">Start Date</th>
@@ -205,10 +198,9 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
           </tbody>
         </table>
       </div>
-      <p className="text-center text-[#7A6E94] italic text-[9px] md:text-xs mb-16">"Even messy notes are helpful because perfection is not required."</p>
+      <p className="text-center text-[#7A6E94] italic text-[9px] md:text-xs mb-16">"Even messy notes are helpful."</p>
 
-      {/* Appointment Checklist */}
-      <div className="grid grid-cols-2 gap-6 md:gap-12 mb-16">
+      <div className="grid grid-cols-2 gap-6 md:gap-12 mb-16 px-2">
         <div>
           <h3 className="font-serif text-base md:text-2xl text-[#5D5276] mb-6">What to bring</h3>
           <ul className="space-y-3">
@@ -234,7 +226,7 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
         </div>
 
         <div>
-          <h3 className="font-serif text-base md:text-2xl text-[#5D5276] mb-6">Questions to ask</h3>
+          <h3 className="font-serif text-base md:text-2xl text-[#5D5276] mb-6">Ask your doctor</h3>
           <ul className="space-y-3 text-[9px] md:text-xs text-[#5D5276] leading-relaxed">
             <li>• "Am I ovulating?"</li>
             <li>• "Check thyroid?"</li>
@@ -248,8 +240,7 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
         </div>
       </div>
 
-      {/* Safety Boxes */}
-      <div className="grid grid-cols-2 gap-4 md:gap-6 mb-16">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 mb-16 px-2">
         <div className="bg-[#98DDC8]/20 border border-[#98DDC8] rounded-2xl p-4 md:p-6">
           <h4 className="font-bold text-[#5D5276] text-[10px] md:text-base mb-4 leading-tight">Book if...</h4>
           <ul className="space-y-2 text-[9px] md:text-sm text-[#5D5276]">
@@ -260,7 +251,7 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
           </ul>
         </div>
         <div className="bg-[#7A6E94]/10 border border-[#7A6E94] rounded-2xl p-4 md:p-6">
-          <h4 className="font-bold text-[#5D5276] text-[10px] md:text-base mb-4 leading-tight">Urgent care if...</h4>
+          <h4 className="font-bold text-[#5D5276] text-[10px] md:text-base mb-4 leading-tight">Urgent if...</h4>
           <ul className="space-y-2 text-[9px] md:text-sm text-[#5D5276]">
             <li>• Soaking 1 pad/hr</li>
             <li>• Faint or weak</li>
@@ -270,10 +261,9 @@ const MagazinePreview: React.FC<MagazinePreviewProps> = ({ page }) => {
         </div>
       </div>
 
-      {/* Citations */}
       <footer className="pt-12 border-t border-[#7A6E94]/10">
-        <h4 className="font-bold text-[9px] uppercase tracking-widest text-[#7A6E94] mb-6">Citations & Sources</h4>
-        <div className="grid grid-cols-2 gap-4 text-[8px] md:text-[10px] text-[#7A6E94]/80">
+        <h4 className="font-bold text-[9px] uppercase tracking-widest text-[#7A6E94] mb-6 text-center md:text-left">Sources</h4>
+        <div className="grid grid-cols-2 gap-4 text-[8px] md:text-[10px] text-[#7A6E94]/80 px-2">
           <p>ACOG (irregular bleeding)</p>
           <p>Mayo Clinic (periods)</p>
           <p>NHS (heavy bleeding)</p>
